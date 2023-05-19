@@ -27,6 +27,7 @@ public class Binary extends AppCompatActivity {
         Octal_editText = findViewById(R.id.Octal_editText);
         Binary_editText = findViewById(R.id.Binary_editText);
 
+
         decimalbtn = (Button) findViewById(R.id.decimalbtn);
         binaryBtn = (Button) findViewById(R.id.binaryBtn);
         octalBtn = (Button) findViewById(R.id.octalBtn);
