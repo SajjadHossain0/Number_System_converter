@@ -30,7 +30,7 @@ private Button decimalbtn, binaryBtn, octalBtn, hexabtn;
         binaryBtn = (Button) findViewById(R.id.binaryBtn);
         octalBtn = (Button) findViewById(R.id.octalBtn);
         hexabtn = (Button) findViewById(R.id.hexabtn);
-//....................
+
         binaryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
