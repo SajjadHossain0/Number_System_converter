@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -63,8 +64,12 @@ public class Octal extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
                     String octalnumber = charSequence.toString();
+                    try {
                     String  decimalNumber = String.valueOf(NumberSystemConverter.octalToDecimal(String.valueOf(Integer.parseInt(octalnumber))));
                     Decimal_editText.setText(decimalNumber);
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(Octal.this, "Invalid Octal number", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Decimal_editText.setText("");
                 }

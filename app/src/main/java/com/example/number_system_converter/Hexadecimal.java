@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Hexadecimal extends AppCompatActivity {
     private EditText Decimal_editText,HexaDecimal_editText,Octal_editText,Binary_editText;
@@ -64,8 +65,12 @@ public class Hexadecimal extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() > 0) {
                     String hexadecimalNumber = charSequence.toString();
-                    String  decimalNumber = NumberSystemConverter.hexadecimalToDecimal(hexadecimalNumber);
-                    Decimal_editText.setText(decimalNumber);
+                    try {
+                        String decimalNumber = NumberSystemConverter.hexadecimalToDecimal(hexadecimalNumber);
+                        Decimal_editText.setText(decimalNumber);
+                    } catch (Exception e) {
+                        Toast.makeText(Hexadecimal.this, "Invalid Hexa-Decimal number", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Decimal_editText.setText("");
                 }
