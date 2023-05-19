@@ -26,6 +26,10 @@ public class Hexadecimal extends AppCompatActivity {
         Octal_editText = findViewById(R.id.Octal_editText);
         Binary_editText = findViewById(R.id.Binary_editText);
 
+        Binary_editText.setEnabled(false);
+        Octal_editText.setEnabled(false);
+        Decimal_editText.setEnabled(false);
+
         decimalbtn = (Button) findViewById(R.id.decimalbtn);
         binaryBtn = (Button) findViewById(R.id.binaryBtn);
         octalBtn = (Button) findViewById(R.id.octalBtn);
